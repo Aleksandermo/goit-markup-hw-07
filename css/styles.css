@@ -670,6 +670,48 @@
     transition-timing-function: var(--tr-fn);
     transition-duration: var(--tr-duration);
   }
+  .icon-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    align-items: center;
+    background-color: var(--cornflower);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: border, background-color;
+    transition-timing-function: var(--tr-fn);
+    transition-duration: var(--tr-duration);
+  }
+  .menu-container .icon-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    align-items: center;
+    fill: var(--studio);
+    background-color: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: border, background-color;
+    transition-timing-function: var(--tr-fn);
+    transition-duration: var(--tr-duration);
+  }
+  .menu-container .icon-close:hover,
+  .menu-container .icon-close:focus {
+    background-color: var(--ocean);
+    border: none;
+  }
   .icon-close:hover,
   .icon-close:focus {
     background-color: var(--ocean);
@@ -1695,10 +1737,13 @@
   width: 100vw;
   height: 100vh;
   padding: 32px;
-  background-color: #3f51b5;
+  background-color: var(--white);
   z-index: 999;
   transform: translateX(100%);
   transition: transform 250ms ease-in-out;
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 .menu-container.is-open {
   transform: translateX(0);
@@ -1710,14 +1755,17 @@
   color: #fff;
 }
 .mobile-menu {
+  display: block;
+  gap: 40px;
   padding: 0;
-  margin: 0;
+  margin-top: 80px;
+  margin-left: 40px;
   list-style: none;
 }
 .mobile-menu .link {
   display: block;
   padding: 10px;
-  color: #fff;
+  color: var(--studio);
   text-decoration: none;
 }
 
@@ -2336,6 +2384,25 @@
     border-radius: 50%;
     align-items: center;
     background-color: var(--cornflower);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: border, background-color;
+    transition-timing-function: var(--tr-fn);
+    transition-duration: var(--tr-duration);
+  }
+
+  .menu-container .icon-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    align-items: center;
+    background-color: #404bbf;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0;
     cursor: pointer;
