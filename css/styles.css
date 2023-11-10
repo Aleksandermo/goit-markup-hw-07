@@ -468,9 +468,6 @@
     text-align: center;
     padding-bottom: 8px;
   }
-
-  /* ostatnia część */
-
   .logo-position {
     color: VAR(--ocean);
   }
@@ -1358,7 +1355,6 @@
     background-color: var(--ocean);
     cursor: pointer;
   }
-  /* ostatnia część */
 
   .nav-position {
     display: flex;
@@ -2158,8 +2154,6 @@
     background-color: var(--ocean);
     cursor: pointer;
   }
-
-  /* ostatnia część */
 
   .navigation {
     display: flex;
