@@ -44,9 +44,7 @@
     padding-block: 96px;
     padding-left: 0px;
   }
-  .boxes {
-    min-width: 428px;
-  }
+
   .container {
     max-width: 1170px;
     padding-left: 15px;
@@ -55,7 +53,6 @@
     margin-right: auto;
   }
   .filter-header .container {
-    min-width: 320px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,9 +81,7 @@
     align-items: center;
     gap: 72px 16px;
   }
-  .filter-photos-list {
-    width: 396px;
-  }
+
   .first-header {
     color: var(--studio);
     font-weight: 700;
@@ -106,6 +101,10 @@
     width: 100%;
     margin-bottom: 8px;
   }
+  .box-title-portfolio {
+    width: 100%;
+    margin-bottom: 8px;
+  }
   .address-font {
     color: var(--body);
     font-weight: 400;
@@ -115,7 +114,6 @@
   }
   .filter-team-background {
     background-color: var(--cloud);
-    min-width: 428px;
   }
   .filter-white-background {
     background-color: var(--white);
@@ -150,7 +148,12 @@
     display: flex;
     justify-content: center;
     gap: 24px;
-    margin-bottom: 16px;
+  }
+  .social-media-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 56px;
   }
   .social-icons {
     width: 40px;
@@ -181,7 +184,6 @@
     background-color: var(--studio);
   }
   .footer-position {
-    min-width: 428px;
     padding: 100px 0 100px;
   }
   .footer-link {
@@ -282,8 +284,9 @@
     margin: 0 auto;
   }
   .subscribe-box {
-    display: flex;
+    width: 100%;
     justify-content: center;
+    padding-bottom: 24px;
   }
   .subscribe-icon {
     display: flex;
@@ -295,7 +298,7 @@
     padding-top: 8px;
     padding-bottom: 8px;
     display: block;
-    width: 398px;
+    width: 100%;
     height: 40px;
     border: 1px solid var(--white);
     border-radius: 4px;
@@ -321,7 +324,11 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   }
   .subscribe-email-position {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 428px;
   }
   .icon-subscribe {
     margin-left: 16px;
@@ -330,7 +337,7 @@
   .filter-title {
     display: block;
     padding: 188px 0 188px;
-    min-width: 428px;
+
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
@@ -353,7 +360,7 @@
         url(../images/people-office@2x.jpg);
       display: block;
       padding: 188px 0 188px;
-      min-width: 428px;
+
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -401,7 +408,6 @@
     cursor: pointer;
   }
   .customers {
-    min-width: 428px;
     padding-top: 120px;
     padding-bottom: 120px;
   }
@@ -499,7 +505,6 @@
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
       0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   }
-
   .filter-buttons {
     display: flex;
     justify-content: center;
@@ -508,6 +513,7 @@
   .filter-five-buttons {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 24px;
     margin-bottom: 72px;
   }
@@ -524,6 +530,9 @@
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 48px;
+  }
+  .filter-icons-portfolio {
+    margin-bottom: 48px;
   }
   .inside-icons {
     white-space: nowrap;
@@ -602,7 +611,7 @@
     column-gap: 200px;
     flex-wrap: wrap;
     max-width: 700px;
-    justify-content: center;
+    justify-content: flex-start;
     padding-bottom: 40px;
     font-style: normal;
     transition: color;
@@ -647,7 +656,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    width: 408px;
+    max-width: 408px;
+    width: 100%;
     min-height: 584px;
     background-color: var(--modalcolor);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -907,6 +917,66 @@
     line-height: 1.1;
     letter-spacing: 0.02em;
   }
+  /* ogólny kod */
+  .menu-toggle {
+    background-color: var(--white);
+    border: none;
+  }
+  .menu-toggle:hover,
+  .menu-toggle:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 80px 40px;
+    background-color: var(--white);
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 250ms ease-in-out;
+    box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+      0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+      0px 2px 1px 0px rgba(46, 47, 66, 0.08);
+  }
+  .menu-container.is-open {
+    transform: translateX(0);
+  }
+  .menu-container .menu-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: #fff;
+  }
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .mobile-menu-position {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .filter-nav {
+    color: var(--studio);
+  }
+  .filter-nav:hover {
+    color: var(--ocean);
+  }
+  .filter-nav:focus {
+    color: var(--ocean);
+    cursor: pointer;
+  }
+  .filter-photos-list {
+    margin-bottom: 72px;
+  }
 }
 
 /* ================================================= TABLET 👇 ========================================= */
@@ -964,8 +1034,9 @@
     margin: 0 auto;
   }
   .filter-header .container {
+    width: 768px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     min-height: 80px;
     max-width: 1170px;
@@ -1106,7 +1177,6 @@
     display: flex;
     justify-content: center;
     gap: 24px;
-    margin-bottom: 16px;
   }
   .social-icons {
     width: 40px;
@@ -1154,8 +1224,8 @@
     background-color: var(--studio);
   }
   .footer-position {
-    padding: 100px 0 100px;
     min-width: 428px;
+    padding: 100px 0 100px;
   }
   .footer-link {
     display: inline-block;
@@ -1178,8 +1248,8 @@
     gap: 24px;
   }
   .subscribe-email-position:nth-child(3) {
-    margin-right: 17px;
     padding-top: 72px;
+    margin-right: 125px;
   }
   .social-filter {
     font-weight: 500;
@@ -1267,12 +1337,21 @@
     justify-content: center;
     padding: 8px 0;
   }
+  .mail {
+    display: flex;
+    gap: 40px;
+    white-space: nowrap;
+  }
+  .mail-tablet {
+    display: block;
+    gap: 40px;
+  }
   .email-frame {
     padding-left: 8px;
     padding-top: 8px;
     padding-bottom: 8px;
     display: block;
-    width: 264px;
+    width: 100%;
     height: 40px;
     border: 1px solid var(--white);
     border-radius: 4px;
@@ -1314,6 +1393,25 @@
     background-position: center;
     background-size: cover;
     margin: 0 auto;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .filter-title {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/people-office@2x.jpg);
+      display: block;
+      padding: 188px 0 188px;
+      min-width: 428px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin: 0 auto;
+    }
   }
   .title {
     margin: 0 auto;
@@ -1418,6 +1516,16 @@
     column-gap: 24px;
     row-gap: 48px;
   }
+  .filter-icons-portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 48px;
+  }
+  .box-title-portfolio {
+    width: 100%;
+    margin-bottom: 8px;
+  }
   .inside-icons {
     white-space: nowrap;
     padding: 32px 16px;
@@ -1504,6 +1612,7 @@
   .address {
     color: var(--body);
   }
+
   .modal-window {
     position: fixed;
     min-height: 100vh;
@@ -1741,6 +1850,9 @@
   .menu-toggle {
     display: none;
   }
+  .menu-container {
+    display: none;
+  }
 }
 
 /* ================================================= NOT DESKTOP 👇 ========================================= */
@@ -1811,7 +1923,8 @@
     gap: 24px;
   }
   .filter-photos-list {
-    width: calc((100% - 48px) / 3);
+    flex-basis: calc((100% - 48px) / 3);
+    margin-bottom: 72px;
   }
   .icon-second-section-index {
     display: flex;
@@ -1928,7 +2041,6 @@
     display: flex;
     justify-content: center;
     gap: 24px;
-    margin-bottom: 16px;
   }
   .social-icons {
     width: 40px;
@@ -2114,6 +2226,25 @@
     background-size: cover;
     margin: 0 auto;
   }
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .filter-title {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/people-office@2x.jpg);
+      display: block;
+      padding: 188px 0 188px;
+      min-width: 428px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin: 0 auto;
+    }
+  }
   .title {
     margin: 0 auto;
     max-width: 570px;
@@ -2216,6 +2347,12 @@
     transition-timing-function: var(--tr-fn);
   }
   .filter-icons {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 48px;
+  }
+  .filter-icons-portfolio {
     display: flex;
     flex-wrap: wrap;
     column-gap: 24px;
@@ -2565,67 +2702,7 @@
   .menu-toggle {
     display: none;
   }
-}
-.menu-toggle {
-  background-color: var(--white);
-  border: none;
-}
-.menu-toggle:hover,
-.menu-toggle:focus {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-.menu-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  padding: 32px;
-  background-color: var(--white);
-  z-index: 999;
-  transform: translateX(100%);
-  transition: transform 250ms ease-in-out;
-  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
-    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
-    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
-}
-.menu-container.is-open {
-  transform: translateX(0);
-}
-.menu-container .menu-toggle {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  color: #fff;
-}
-.mobile-menu {
-  display: block;
-  gap: 40px;
-  padding: 0;
-  margin-top: 80px;
-
-  margin-left: 40px;
-  list-style: none;
-}
-.mobile-menu .link {
-  display: block;
-  padding: 10px;
-  color: var(--studio);
-  text-decoration: none;
-}
-.mobile-menu-position {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.filter-nav {
-  color: var(--studio);
-}
-.filter-nav:hover {
-  color: var(--ocean);
-}
-.filter-nav:focus {
-  color: var(--ocean);
-  cursor: pointer;
+  .menu-container {
+    display: none;
+  }
 }
