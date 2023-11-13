@@ -54,7 +54,7 @@
   }
   .filter-header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     min-height: 80px;
   }
@@ -106,9 +106,10 @@
     margin-bottom: 8px;
   }
   .address-font {
+    max-width: 396px;
     color: var(--body);
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 1em;
     line-height: 1.5;
     letter-spacing: 0.02em;
   }
@@ -151,16 +152,18 @@
   }
   .social-media-menu {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 56px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+    gap: 15%;
   }
   .social-icons {
     width: 40px;
     height: 40px;
   }
   .social-icons-filter {
-    width: 100%;
+    width: 40px;
+    margin-right: 5%;
     height: 100%;
     background-color: var(--iris);
     border-radius: 50%;
@@ -606,11 +609,12 @@
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
       0px 2px 2px rgba(0, 0, 0, 0.12);
   }
+
   .filter-address {
     display: flex;
     column-gap: 200px;
     flex-wrap: wrap;
-    max-width: 700px;
+    max-width: 353px;
     justify-content: flex-start;
     padding-bottom: 40px;
     font-style: normal;
@@ -917,6 +921,22 @@
     line-height: 1.1;
     letter-spacing: 0.02em;
   }
+  .highlight-color-mobile-size {
+    color: var(--ocean);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+  @media screen and (max-width: 440px) {
+    .highlight-color-mobile-size {
+      color: var(--ocean);
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+    }
+  }
   /* ogólny kod */
   .menu-toggle {
     background-color: var(--white);
@@ -1177,6 +1197,7 @@
     display: flex;
     justify-content: center;
     gap: 24px;
+    width: 264px;
   }
   .social-icons {
     width: 40px;
@@ -1249,7 +1270,7 @@
   }
   .subscribe-email-position:nth-child(3) {
     padding-top: 72px;
-    margin-right: 125px;
+    margin-right: 17px;
   }
   .social-filter {
     font-weight: 500;
@@ -2087,7 +2108,10 @@
     flex-wrap: nowrap;
   }
   .next-class {
-    margin-right: 120px;
+    margin-right: 0px;
+  }
+  .next-class-footer {
+    padding-left: 120px;
   }
   .social-filter {
     font-weight: 500;
@@ -2207,6 +2231,10 @@
   }
   .subscribe-email-position {
     padding-left: 80px;
+  }
+  .subscribe-email-position:nth-child(3) {
+    padding-top: 0;
+    margin-right: 0;
   }
   .icon-subscribe {
     margin-left: 16px;
